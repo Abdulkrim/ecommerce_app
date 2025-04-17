@@ -1,5 +1,8 @@
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/data/data_source/static/static.dart';
+import 'package:ecommerce_app/view/wiget/on_boarding/custom_button.dart';
+import 'package:ecommerce_app/view/wiget/on_boarding/custom_dot_controller.dart';
+import 'package:ecommerce_app/view/wiget/on_boarding/custom_slider.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -9,40 +12,24 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: PageView.builder(
-          itemCount: onBoardingList.length,
-          itemBuilder: (context, index) => Column(
-            children: [
-              Text(
-                onBoardingList[index].title!,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3,
+              child: 
+              CustomSliderOnBoarding(),
+            ),
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  CustomDotControllerOnBoarding(),
+                  Spacer(),
+                  CustomButtonOnBoarding(),
+                ],
               ),
-              SizedBox(
-                height: 80,
-              ),
-              Image.asset(onBoardingList[index].image!,width: 200,height: 250,fit: BoxFit.fill,),
-              SizedBox(
-                height: 80,
-              ),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.center,
-                child: Text(
-                  onBoardingList[index].body!,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    height: 2,
-                    color: AppColor.grey,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
