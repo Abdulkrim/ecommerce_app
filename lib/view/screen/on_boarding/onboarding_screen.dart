@@ -12,7 +12,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(OnBoardingControllerImp());
+    Get.put(OnBoardingControllerImp ());
     return Scaffold(
       body: SafeArea(
         child: Column(
