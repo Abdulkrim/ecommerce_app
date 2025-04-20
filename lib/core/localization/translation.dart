@@ -7,7 +7,7 @@ class MyTranslation extends Translations {
     "ar":{
       "1":"اختر اللغة"
     },
-    "an":{
+    "en":{
       "1":"Chosse Language"
     }
   };

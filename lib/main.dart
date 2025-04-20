@@ -1,9 +1,9 @@
 import 'package:ecommerce_app/core/constant/app_color.dart';
+import 'package:ecommerce_app/core/localization/change_local.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/routes.dart';
 import 'package:ecommerce_app/view/screen/language/language_screen.dart';
-import 'package:ecommerce_app/view/screen/on_boarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LocalController controller = Get.put(LocalController());
     return GetMaterialApp(
+      locale: controller.language,
       translations: MyTranslation(),
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
@@ -40,8 +42,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes: routes,
-        home: OnBoardingScreen(),
-        //  LanguageScreen(),
+        home: LanguageScreen(),
         );
   }
 }
