@@ -14,11 +14,12 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImp ());
     return Scaffold(
+      backgroundColor: AppColor.backgroundColor,
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
-              flex: 3,
+              flex: 4,
               child: 
               CustomSliderOnBoarding(),
             ),
