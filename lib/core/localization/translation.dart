@@ -5,10 +5,10 @@ class MyTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
     "ar":{
-      "1":"هلا"
+      "1":"اختر اللغة"
     },
     "an":{
-      "1":"Hii"
+      "1":"Chosse Language"
     }
   };
 
