@@ -1,4 +1,7 @@
 import 'package:ecommerce_app/core/constant/app_color.dart';
+import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
+import 'package:ecommerce_app/view/wiget/auth/custom_text_form_field_auth.dart';
+import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -23,33 +26,16 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Text(
-              "Welcome Back",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            CustomTextTitleAuth(text: "Welcome Back"),
             SizedBox(
               height: 10,
             ),
-            Text(
-              "Sign In With Email And Password OR Continue With Socail Media",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
+            CustomTextBody(text: "Sign In With Email And Password OR Continue With Socail Media"),
             SizedBox(
-              height: 25,
+              height: 65,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5 ),
-                label: Text("Email"),
-                suffixIcon: Icon(Icons.email_outlined),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-            ),
+            CustomTextFormFieldAuth(hintText: "Enter Your Email",lable: "Email",iconData: Icons.email_outlined,),
+            CustomTextFormFieldAuth(hintText: "Enter Your Password",lable: "Password",iconData: Icons.lock_clock_outlined,),
           ],
         ),
       ),
