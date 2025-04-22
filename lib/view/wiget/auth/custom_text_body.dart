@@ -8,7 +8,7 @@ class CustomTextBody extends StatelessWidget {
     return Text(
               text,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.bodySmall,
             );
   }
 }
