@@ -6,19 +6,19 @@ class CustomTextFormFieldAuth extends StatelessWidget {
     required this.hintText,
      required this.lable,
       required this.iconData,
-      //  required this.myController
+       required this.myController
        });
   final String hintText;
   final String lable;
   final IconData iconData;
-  // final TextEditingController myController;
+  final TextEditingController myController;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 20,),
       child: TextFormField(
-                // controller: myController,
+                controller: myController,
                 decoration: InputDecoration(
                   hintText: hintText,
                   hintStyle: TextStyle(fontSize: 14 ),
