@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/controller/auth/foget_password_controller.dart';
 import 'package:ecommerce_app/controller/auth/signup_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
@@ -8,19 +9,20 @@ import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class ForgetPasswordScreen extends StatelessWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SignupControllerImp controller = Get.put(SignupControllerImp());
+    ForgetPasswordControllerImp controller =
+        Get.put(ForgetPasswordControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColor.backgroundColor,
         elevation: 0,
         title: Text(
-          "Sign Up",
+          "Forget Password",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
@@ -28,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Welcome Back"),
+            CustomTextTitleAuth(text: "Forget Password"),
             SizedBox(
               height: 10,
             ),
@@ -39,36 +41,17 @@ class SignUpScreen extends StatelessWidget {
               height: 10,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Username",
-              lable: "Username",
-              iconData: Icons.person_3_outlined, myController: controller.usernameController,
-            ),
-            CustomTextFormFieldAuth(
               hintText: "Enter Your Email",
               lable: "Email",
-              iconData: Icons.email_outlined, myController: controller.emailController,
-            ),
-            CustomTextFormFieldAuth(
-              hintText: "Enter Your Phone",
-              lable: "Phone",
-              iconData: Icons.phone_android_outlined, myController: controller.phoneController,
-            ),
-            CustomTextFormFieldAuth(
-              hintText: "Enter Your Password",
-              lable: "Password",
-              iconData: Icons.lock_clock_outlined, myController: controller.passwordController,
+              iconData: Icons.email_outlined,
+              myController: controller.emailController,
             ),
             CustomButtonAuth(
-              text: 'Sign In',
+              text: 'Check',
               onPressed: () {},
             ),
             SizedBox(
               height: 30,
-            ),
-            CustomTextSigninOrSignup(
-              textOne: "have an account ? ",
-              textTwo: "Sign In",
-              onTap: controller.goToSignIn,
             ),
           ],
         ),

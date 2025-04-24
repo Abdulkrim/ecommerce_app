@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/controller/login/login_controller.dart';
+import 'package:ecommerce_app/controller/auth/login_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
@@ -40,7 +40,9 @@ class LogInScreen extends StatelessWidget {
             ),
             CustomTextFormFieldAuth(hintText: "Enter Your Email",lable: "Email",iconData: Icons.email_outlined, myController: controller.emailController,),
             CustomTextFormFieldAuth(hintText: "Enter Your Password",lable: "Password",iconData: Icons.lock_clock_outlined,myController: controller.passwordController,),
-            Text("Forget Password", textAlign: TextAlign.end,),
+            InkWell(
+              onTap: controller.goToForgetPassword,
+              child: Text("Forget Password", textAlign: TextAlign.end,)),
             CustomButtonAuth(text: 'Sign In',onPressed: () {},),
             SizedBox(
               height: 30,
