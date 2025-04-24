@@ -3,30 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class ResetPasswordController extends GetxController {
-  checkEmail();
-  goVerfiyCode();
+  resetPassword();
+  goSuccessRestPassword();
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController {
-  late TextEditingController emailController;
+  late TextEditingController passwordController;
+  late TextEditingController rePasswordController;
 
   @override
-  goVerfiyCode() {
-    Get.offNamed(AppRoute.verfiyCode);
+  goSuccessRestPassword() {
+    Get.offNamed(AppRoute.successRestPassword);
   }
 
   @override
-  checkEmail() {}
+  resetPassword() {}
 
   @override
   void onInit() {
-    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    rePasswordController = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
-    emailController.dispose();
+    passwordController.dispose();
+    rePasswordController.dispose();
     super.dispose();
   }
 }

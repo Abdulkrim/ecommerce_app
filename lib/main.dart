@@ -3,6 +3,7 @@ import 'package:ecommerce_app/core/localization/change_local.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/routes.dart';
+import 'package:ecommerce_app/test.dart';
 import 'package:ecommerce_app/view/screen/language/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,7 +53,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes: routes,
-        home: LanguageScreen(),
+        home: 
+        // Test(),
+        LanguageScreen(),
         );
   }
 }

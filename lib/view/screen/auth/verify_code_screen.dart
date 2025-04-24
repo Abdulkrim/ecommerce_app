@@ -1,13 +1,11 @@
-import 'package:ecommerce_app/controller/auth/foget_password_controller.dart';
-import 'package:ecommerce_app/controller/auth/signup_controller.dart';
+  
 import 'package:ecommerce_app/controller/auth/verfiy_code_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
-import 'package:ecommerce_app/view/wiget/auth/custom_text_form_field_auth.dart';
-import 'package:ecommerce_app/view/wiget/auth/custom_text_signin_or_signup.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
 class VerifyCodeScreen extends StatelessWidget {
@@ -30,25 +28,31 @@ class VerifyCodeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Verify Code"),
+            CustomTextTitleAuth(text: "Check Code"),
             SizedBox(
               height: 10,
             ),
             CustomTextBody(
                 text:
-                    "Sign Up With Email And Password OR Continue With Socail Media"),
+                    "Please Enter The Digit Code Send To abdulkarimsalem@gmail.com"),
             SizedBox(
               height: 10,
             ),
-            CustomTextFormFieldAuth(
-              hintText: "Enter Your Email",
-              lable: "Email",
-              iconData: Icons.email_outlined,
-              myController: controller.emailController,
-            ),
-            CustomButtonAuth(
-              text: 'Check',
-              onPressed: () {},
+            OtpTextField(
+              fieldWidth: 50,
+              borderRadius: BorderRadius.circular(20),
+              numberOfFields: 5,
+              borderColor: Color(0xFF512DA8),
+              //set to true to show as box or false to show as dash
+              showFieldAsBox: true,
+              //runs when a code is typed in
+              onCodeChanged: (String code) {
+                //handle validation or checks here
+              },
+              //runs when every textfield is filled
+              onSubmit: (String verificationCode) {
+                controller.goRestPassword();
+              }, // end onSubmit
             ),
             SizedBox(
               height: 30,

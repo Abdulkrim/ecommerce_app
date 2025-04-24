@@ -1,12 +1,9 @@
-import 'package:ecommerce_app/controller/auth/foget_password_controller.dart';
 import 'package:ecommerce_app/controller/auth/reset_password_controller.dart';
-import 'package:ecommerce_app/controller/auth/signup_controller.dart';
-import 'package:ecommerce_app/controller/auth/verfiy_code_controller.dart';
+
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_form_field_auth.dart';
-import 'package:ecommerce_app/view/wiget/auth/custom_text_signin_or_signup.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,24 +28,28 @@ class ResetPasswordScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Reset Password"),
+            CustomTextTitleAuth(text: "New Password"),
             SizedBox(
               height: 10,
             ),
-            CustomTextBody(
-                text:
-                    "Sign Up With Email And Password OR Continue With Socail Media"),
+            CustomTextBody(text: "Please Enter New Password"),
             SizedBox(
               height: 10,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Email",
-              lable: "Email",
-              iconData: Icons.email_outlined,
-              myController: controller.emailController,
+              hintText: "Enter Your Password",
+              lable: "Password",
+              iconData: Icons.lock_clock_outlined,
+              myController: controller.passwordController,
+            ),
+            CustomTextFormFieldAuth(
+              hintText: "Re Enter Your Password",
+              lable: "Re password",
+              iconData: Icons.lock_clock_outlined,
+              myController: controller.rePasswordController,
             ),
             CustomButtonAuth(
-              text: 'Check',
+              text: 'Save',
               onPressed: () {},
             ),
             SizedBox(

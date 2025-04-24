@@ -1,10 +1,8 @@
 import 'package:ecommerce_app/controller/auth/foget_password_controller.dart';
-import 'package:ecommerce_app/controller/auth/signup_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_form_field_auth.dart';
-import 'package:ecommerce_app/view/wiget/auth/custom_text_signin_or_signup.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,7 +46,9 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             CustomButtonAuth(
               text: 'Check',
-              onPressed: () {},
+              onPressed: () {
+                controller.goVerfiyCode();
+              },
             ),
             SizedBox(
               height: 30,
