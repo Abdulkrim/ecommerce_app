@@ -27,8 +27,11 @@ class SuccessSignupScreen extends StatelessWidget {
               color: AppColor.primaryColor,
             ),
           ),
-          Text("...."),
-          Text("...."),
+          Text("congratulations",style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium!
+                  .copyWith(fontSize: 30),),
+          Text("successfully registere"),
           Spacer(),
           SizedBox(
             width: double.infinity,

@@ -27,8 +27,8 @@ class SuccessResetPasswordScreen extends StatelessWidget {
               color: AppColor.primaryColor,
             ),
           ),
-          Text("...."),
-          Text("...."),
+          Text("congratulations"),
+          Text("successfully registere"),
           Spacer(),
           SizedBox(
             width: double.infinity,
