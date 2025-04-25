@@ -59,8 +59,10 @@ class SignUpScreen extends StatelessWidget {
               iconData: Icons.lock_clock_outlined, myController: controller.passwordController,
             ),
             CustomButtonAuth(
-              text: 'Sign In',
-              onPressed: () {},
+              text: 'Sign Up',
+              onPressed: () {
+                controller.signUp();
+              },
             ),
             SizedBox(
               height: 30,

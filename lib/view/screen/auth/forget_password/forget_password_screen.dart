@@ -34,7 +34,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             CustomTextBody(
                 text:
-                    "Sign Up With Email And Password OR Continue With Socail Media"),
+                    "Please Enter Your Email Address To Recivre A Verification Code"),
             SizedBox(
               height: 10,
             ),

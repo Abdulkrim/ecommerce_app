@@ -50,7 +50,9 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             CustomButtonAuth(
               text: 'Save',
-              onPressed: () {},
+              onPressed: () {
+                controller.goSuccessRestPassword();
+              },
             ),
             SizedBox(
               height: 30,

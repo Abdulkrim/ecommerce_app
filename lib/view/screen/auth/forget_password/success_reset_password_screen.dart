@@ -2,12 +2,12 @@ import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
 import 'package:flutter/material.dart';
 
-class SuccessSignupScreen extends StatelessWidget {
-  const SuccessSignupScreen({super.key});
+class SuccessResetPasswordScreen extends StatelessWidget {
+  const SuccessResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColor.backgroundColor,
