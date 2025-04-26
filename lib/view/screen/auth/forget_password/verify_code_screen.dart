@@ -20,7 +20,7 @@ class VerifyCodeScreen extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0,
         title: Text(
-          "Verify Code",
+          "40".tr,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
@@ -28,13 +28,13 @@ class VerifyCodeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Check Code"),
+            CustomTextTitleAuth(text: "41".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextBody(
                 text:
-                    "Please Enter The Digit Code Send To abdulkarimsalem@gmail.com"),
+                    "42".tr),
             SizedBox(
               height: 10,
             ),

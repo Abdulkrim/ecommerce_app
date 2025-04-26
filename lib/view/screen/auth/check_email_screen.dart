@@ -19,7 +19,7 @@ class CheckEmailScreen extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0,
         title: Text(
-          "Check Email",
+          "27".tr,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
@@ -27,24 +27,24 @@ class CheckEmailScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Check Your Email "),
+            CustomTextTitleAuth(text: "27".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextBody(
                 text:
-                    "Please Enter Your Email Address To Recivre A Verification Code"),
+                    "29".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Email",
-              lable: "Email",
+              hintText: "12".tr,
+              lable: "18".tr,
               iconData: Icons.email_outlined,
               myController: controller.emailController,
             ),
             CustomButtonAuth(
-              text: 'Check',
+              text: '30'.tr,
               onPressed: () {
                 controller.goSuccessSignUp();
               },

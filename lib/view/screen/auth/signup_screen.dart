@@ -20,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0,
         title: Text(
-          "Sign Up",
+          "17".tr,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
@@ -28,38 +28,38 @@ class SignUpScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Welcome Back"),
+            CustomTextTitleAuth(text: "10".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextBody(
                 text:
-                    "Sign Up With Email And Password OR Continue With Socail Media"),
+                    "24".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Username",
-              lable: "Username",
+              hintText: "23".tr,
+              lable: "20".tr,
               iconData: Icons.person_3_outlined, myController: controller.usernameController,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Email",
-              lable: "Email",
+              hintText: "12".tr,
+              lable: "18".tr,
               iconData: Icons.email_outlined, myController: controller.emailController,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Phone",
-              lable: "Phone",
+              hintText: "22".tr,
+              lable: "21".tr,
               iconData: Icons.phone_android_outlined, myController: controller.phoneController,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Password",
-              lable: "Password",
+              hintText: "13".tr,
+              lable: "19".tr,
               iconData: Icons.lock_clock_outlined, myController: controller.passwordController,
             ),
             CustomButtonAuth(
-              text: 'Sign Up',
+              text: '17'.tr,
               onPressed: () {
                 controller.signUp();
               },
@@ -68,8 +68,8 @@ class SignUpScreen extends StatelessWidget {
               height: 30,
             ),
             CustomTextSigninOrSignup(
-              textOne: "have an account ? ",
-              textTwo: "Sign In",
+              textOne: "25".tr,
+              textTwo: "26".tr,
               onTap: controller.goToSignIn,
             ),
           ],

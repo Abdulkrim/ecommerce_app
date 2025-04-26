@@ -20,7 +20,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0,
         title: Text(
-          "Forget Password",
+          "14".tr,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
@@ -28,24 +28,23 @@ class ForgetPasswordScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "Forget Password"),
+            CustomTextTitleAuth(text: "14".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextBody(
-                text:
-                    "Please Enter Your Email Address To Recivre A Verification Code"),
+                text: "29".tr),
             SizedBox(
               height: 10,
             ),
             CustomTextFormFieldAuth(
-              hintText: "Enter Your Email",
-              lable: "Email",
+              hintText: "12".tr,
+              lable: "18".tr,
               iconData: Icons.email_outlined,
               myController: controller.emailController,
             ),
             CustomButtonAuth(
-              text: 'Check',
+              text: '30'.tr,
               onPressed: () {
                 controller.goVerfiyCode();
               },

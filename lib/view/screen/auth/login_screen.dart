@@ -21,7 +21,7 @@ class LogInScreen extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0,
         title: Text(
-          "Sign In",
+          "26".tr,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
@@ -30,24 +30,24 @@ class LogInScreen extends StatelessWidget {
         child: ListView(
           children: [
             LogoAuth(),
-            CustomTextTitleAuth(text: "Welcome Back"),
+            CustomTextTitleAuth(text: "10".tr),
             SizedBox(
               height: 10,
             ),
-            CustomTextBody(text: "Sign In With Email And Password OR Continue With Socail Media"),
+            CustomTextBody(text: "11".tr),
             SizedBox(
               height: 10,
             ),
-            CustomTextFormFieldAuth(hintText: "Enter Your Email",lable: "Email",iconData: Icons.email_outlined, myController: controller.emailController,),
-            CustomTextFormFieldAuth(hintText: "Enter Your Password",lable: "Password",iconData: Icons.lock_clock_outlined,myController: controller.passwordController,),
+            CustomTextFormFieldAuth(hintText: "12".tr,lable: "18".tr,iconData: Icons.email_outlined, myController: controller.emailController,),
+            CustomTextFormFieldAuth(hintText: "13".tr,lable: "19".tr,iconData: Icons.lock_clock_outlined,myController: controller.passwordController,),
             InkWell(
               onTap: controller.goToForgetPassword,
-              child: Text("Forget Password", textAlign: TextAlign.end,)),
-            CustomButtonAuth(text: 'Sign In',onPressed: () {},),
+              child: Text("14".tr, textAlign: TextAlign.end,)),
+            CustomButtonAuth(text: '15'.tr,onPressed: () {},),
             SizedBox(
               height: 30,
             ),
-            CustomTextSigninOrSignup(textOne: "Don't have an account ? ", textTwo: "Sign Up",onTap: controller.goToSignUp,),
+            CustomTextSigninOrSignup(textOne: "16".tr, textTwo: "17".tr,onTap: controller.goToSignUp,),
           ],
         ),
       ),
