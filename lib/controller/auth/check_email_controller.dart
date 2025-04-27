@@ -9,14 +9,23 @@ abstract class CheckEmailController extends GetxController {
 
 class CheckEmailControllerImp extends CheckEmailController {
   late TextEditingController emailController;
+  GlobalKey <FormState> formState = GlobalKey();
 
   @override
   goVerfyCodeSignUp() {
-    Get.toNamed(AppRoute.verfiyCodeSignUp);
+     FormState? formData = formState.currentState;
+    if (formData!.validate()) {
+       Get.toNamed(AppRoute.verfiyCodeSignUp);
+    }else{
+      print("Not Valid");
+    }
+
   }
 
   @override
-  checkEmail() {}
+  checkEmail() {
+   
+  }
 
   @override
   void onInit() {

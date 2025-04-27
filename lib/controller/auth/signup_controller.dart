@@ -12,6 +12,7 @@ class SignupControllerImp extends SignupController {
   late TextEditingController usernameController;
   late TextEditingController phoneController;
   late TextEditingController passwordController;
+  GlobalKey <FormState> formState = GlobalKey();
   @override
   goToSignIn() {
     Get.offNamed(AppRoute.logIn);
@@ -19,7 +20,13 @@ class SignupControllerImp extends SignupController {
 
   @override
   signUp() {
-    Get.offNamed(AppRoute.checkEmail);
+    FormState? formData = formState.currentState;
+    if (formData!.validate()) {
+       Get.offNamed(AppRoute.checkEmail);
+    }else{
+      print("Not Valid");
+    }
+   
   }
 
   @override

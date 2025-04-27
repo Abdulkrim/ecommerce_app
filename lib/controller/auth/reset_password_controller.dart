@@ -10,10 +10,16 @@ abstract class ResetPasswordController extends GetxController {
 class ResetPasswordControllerImp extends ResetPasswordController {
   late TextEditingController passwordController;
   late TextEditingController rePasswordController;
+  GlobalKey<FormState> formState = GlobalKey();
 
   @override
   goSuccessRestPassword() {
-    Get.offNamed(AppRoute.successRestPassword);
+    FormState? formData = formState.currentState;
+    if (formData!.validate()) {
+      Get.offNamed(AppRoute.successRestPassword);
+    } else {
+      print("Not Valid");
+    }
   }
 
   @override
