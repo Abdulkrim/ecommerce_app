@@ -1,9 +1,7 @@
-import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/core/localization/change_local.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/routes.dart';
-import 'package:ecommerce_app/test.dart';
 import 'package:ecommerce_app/view/screen/language/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,13 +21,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       locale: controller.language,
       translations: MyTranslation(),
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: controller.appTheme,
-        routes: routes,
-        home: 
-        // Test(),
-        LanguageScreen(),
-        );
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: controller.appTheme,
+      routes: routes,
+      home:
+          // Test(),
+          LanguageScreen(),
+    );
   }
 }

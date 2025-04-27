@@ -28,7 +28,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "14".tr),
+            CustomTextTitleAuth(text: "27".tr),
             SizedBox(
               height: 10,
             ),

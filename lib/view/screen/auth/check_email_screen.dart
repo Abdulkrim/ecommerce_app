@@ -27,7 +27,7 @@ class CheckEmailScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: ListView(
           children: [
-            CustomTextTitleAuth(text: "27".tr),
+            CustomTextTitleAuth(text: "46".tr),
             SizedBox(
               height: 10,
             ),
@@ -46,7 +46,7 @@ class CheckEmailScreen extends StatelessWidget {
             CustomButtonAuth(
               text: '30'.tr,
               onPressed: () {
-                controller.goSuccessSignUp();
+                controller.goVerfyCodeSignUp();
               },
             ),
             SizedBox(

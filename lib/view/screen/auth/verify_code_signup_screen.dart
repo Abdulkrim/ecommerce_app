@@ -1,5 +1,4 @@
-  
-import 'package:ecommerce_app/controller/auth/verfiy_code_controller.dart';
+import 'package:ecommerce_app/controller/auth/verify_code_signup_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
@@ -7,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
-class VerifyCodeScreen extends StatelessWidget {
-  const VerifyCodeScreen({super.key});
+class VerifyCodeSignUpScreen extends StatelessWidget {
+  const VerifyCodeSignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeControllerImp controller = Get.put(VerifyCodeControllerImp());
+    VerifyCodeSignUpControllerImp controller = Get.put(VerifyCodeSignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -31,9 +30,7 @@ class VerifyCodeScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            CustomTextBody(
-                text:
-                    "42".tr),
+            CustomTextBody(text: "42".tr),
             SizedBox(
               height: 10,
             ),
@@ -50,7 +47,7 @@ class VerifyCodeScreen extends StatelessWidget {
               },
               //runs when every textfield is filled
               onSubmit: (String verificationCode) {
-                controller.goRestPassword();
+                controller.goSuccessSignUp();
               }, // end onSubmit
             ),
             SizedBox(

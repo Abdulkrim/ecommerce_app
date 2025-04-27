@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/core/constant/app_route.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class VerifyCodeController extends GetxController {
@@ -11,7 +10,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
 
   @override
   goRestPassword() {
-    Get.offNamed(AppRoute.resetPassword);
+    Get.offAllNamed(AppRoute.resetPassword);
   }
 
   @override

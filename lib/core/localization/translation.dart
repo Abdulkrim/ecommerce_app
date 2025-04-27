@@ -48,6 +48,7 @@ class MyTranslation extends Translations {
           "43" : "إعادة تعيين كلمة المرور",
           "44" : "إعادة كلمة المرور",
           "45" : "إعادة إدخال كلمة المرور",
+          "46" : "تم انشاء الحساب بنجاح",
           
         },
         "en": {
@@ -95,6 +96,7 @@ class MyTranslation extends Translations {
           "43" : "Reset Password",
           "44" : "Re password",
           "45" : "Re Enter Your Password",
+          "46" : "Account successfully created",
 
 
           
