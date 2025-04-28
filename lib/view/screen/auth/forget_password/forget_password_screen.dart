@@ -41,6 +41,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 height: 10,
               ),
               CustomTextFormFieldAuth(
+                type: TextInputType.emailAddress,
                 validator: (val) {
                    return validInput(val!, 5, 100, "email");
                 },

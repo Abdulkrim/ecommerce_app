@@ -42,6 +42,7 @@ class LogInScreen extends StatelessWidget {
                 height: 10,
               ),
               CustomTextFormFieldAuth(
+                type: TextInputType.emailAddress,
                 validator: (val) {
                   return validInput(val!, 5, 100, "email");
                 },
@@ -51,6 +52,7 @@ class LogInScreen extends StatelessWidget {
                 myController: controller.emailController,
               ),
               CustomTextFormFieldAuth(
+                type: TextInputType.visiblePassword,
                 validator: (val) {
                   return validInput(val!, 5, 30, "password");
                 },

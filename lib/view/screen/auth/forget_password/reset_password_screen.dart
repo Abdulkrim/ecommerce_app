@@ -40,6 +40,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 height: 10,
               ),
               CustomTextFormFieldAuth(
+                type: TextInputType.visiblePassword,
                 validator: (val) {
                   return validInput(val!, 5, 30, "password");
                 },
@@ -49,6 +50,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 myController: controller.passwordController,
               ),
               CustomTextFormFieldAuth(
+                type: TextInputType.visiblePassword,
                 validator: (val) {
                   return validInput(val!, 5, 30, "password");
                 },

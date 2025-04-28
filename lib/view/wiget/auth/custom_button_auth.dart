@@ -2,9 +2,9 @@ import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomButtonAuth extends StatelessWidget {
-  CustomButtonAuth({super.key, required this.text, this.onPressed});
+  const CustomButtonAuth({super.key, required this.text, this.onPressed});
   final String text;
-  void Function()? onPressed;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
