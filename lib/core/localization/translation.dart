@@ -49,6 +49,10 @@ class MyTranslation extends Translations {
           "44" : "إعادة كلمة المرور",
           "45" : "إعادة إدخال كلمة المرور",
           "46" : "تم انشاء الحساب بنجاح",
+          "48" : "تنبيه",
+          "49" : "هل تريد الخروج من التطبيق",
+          "50" : "تأكيد",
+          "51" : "إلغاء",
           
         },
         "en": {
@@ -97,6 +101,10 @@ class MyTranslation extends Translations {
           "44" : "Re password",
           "45" : "Re Enter Your Password",
           "46" : "Account successfully created",
+          "48" : "Alert",
+          "49" : "Do you want to exit the application?",
+          "50" : "Confirm",
+          "51" : "Cancel",
 
 
           

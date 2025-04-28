@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/controller/auth/login_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
+import 'package:ecommerce_app/core/functions/alert_exit_app.dart';
 import 'package:ecommerce_app/core/functions/valid_inpuy.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_button_auth.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
@@ -26,62 +27,66 @@ class LogInScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-        child: Form(
-          key: controller.formState,
-          child: ListView(
-            children: [
-              LogoAuth(),
-              CustomTextTitleAuth(text: "10".tr),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTextBody(text: "11".tr),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTextFormFieldAuth(
-                type: TextInputType.emailAddress,
-                validator: (val) {
-                  return validInput(val!, 5, 100, "email");
-                },
-                hintText: "12".tr,
-                lable: "18".tr,
-                iconData: Icons.email_outlined,
-                myController: controller.emailController,
-              ),
-              CustomTextFormFieldAuth(
-                type: TextInputType.visiblePassword,
-                validator: (val) {
-                  return validInput(val!, 5, 30, "password");
-                },
-                hintText: "13".tr,
-                lable: "19".tr,
-                iconData: Icons.lock_clock_outlined,
-                myController: controller.passwordController,
-              ),
-              InkWell(
-                  onTap: controller.goToForgetPassword,
-                  child: Text(
-                    "14".tr,
-                    textAlign: TextAlign.end,
-                  )),
-              CustomButtonAuth(
-                text: '15'.tr,
-                onPressed: () {
-                  controller.login();
-                },
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              CustomTextSigninOrSignup(
-                textOne: "16".tr,
-                textTwo: "17".tr,
-                onTap: controller.goToSignUp,
-              ),
-            ],
+      body: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: alertExitApp,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              children: [
+                LogoAuth(),
+                CustomTextTitleAuth(text: "10".tr),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomTextBody(text: "11".tr),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormFieldAuth(
+                  type: TextInputType.emailAddress,
+                  validator: (val) {
+                    return validInput(val!, 5, 100, "email");
+                  },
+                  hintText: "12".tr,
+                  lable: "18".tr,
+                  iconData: Icons.email_outlined,
+                  myController: controller.emailController,
+                ),
+                CustomTextFormFieldAuth(
+                  type: TextInputType.visiblePassword,
+                  validator: (val) {
+                    return validInput(val!, 5, 30, "password");
+                  },
+                  hintText: "13".tr,
+                  lable: "19".tr,
+                  iconData: Icons.lock_clock_outlined,
+                  myController: controller.passwordController,
+                ),
+                InkWell(
+                    onTap: controller.goToForgetPassword,
+                    child: Text(
+                      "14".tr,
+                      textAlign: TextAlign.end,
+                    )),
+                CustomButtonAuth(
+                  text: '15'.tr,
+                  onPressed: () {
+                    controller.login();
+                  },
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CustomTextSigninOrSignup(
+                  textOne: "16".tr,
+                  textTwo: "17".tr,
+                  onTap: controller.goToSignUp,
+                ),
+              ],
+            ),
           ),
         ),
       ),
