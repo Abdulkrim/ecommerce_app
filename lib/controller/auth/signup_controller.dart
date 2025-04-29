@@ -13,6 +13,8 @@ class SignupControllerImp extends SignupController {
   late TextEditingController phoneController;
   late TextEditingController passwordController;
   GlobalKey <FormState> formState = GlobalKey();
+  bool isHiddenPassword = true;
+
   @override
   goToSignIn() {
     Get.offNamed(AppRoute.logIn);
@@ -27,6 +29,11 @@ class SignupControllerImp extends SignupController {
       print("Not Valid");
     }
    
+  }
+
+  showPassword(){
+    isHiddenPassword = isHiddenPassword == true ? false : true;
+    update();
   }
 
   @override

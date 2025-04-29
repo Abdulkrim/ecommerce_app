@@ -12,9 +12,12 @@ class LoginControllerImp extends LoginController {
   late TextEditingController emailController;
   late TextEditingController passwordController;
   GlobalKey <FormState> formState = GlobalKey();
+  bool isHiddenPassword = true;
+
   @override
   goToSignUp() {
     Get.offNamed(AppRoute.signUp);
+    Get.delete<LoginControllerImp>();
   }
 
   @override
@@ -22,9 +25,15 @@ class LoginControllerImp extends LoginController {
     FormState? formData = formState.currentState;
     if (formData!.validate()) {
        print("Valid");
+       Get.delete<LoginControllerImp>();
     }else{
       print("Not Valid");
     }
+  }
+
+  showPassword(){
+    isHiddenPassword = isHiddenPassword == true ? false : true;
+    update();
   }
 
   @override

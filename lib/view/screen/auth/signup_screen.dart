@@ -71,13 +71,15 @@ class SignUpScreen extends StatelessWidget {
                     iconData: Icons.phone_android_outlined, myController: controller.phoneController,
                   ),
                   CustomTextFormFieldAuth(
+                    obscureText: controller.isHiddenPassword,
+                    onTapSuffixIcon: () => controller.showPassword(),
                     type: TextInputType.visiblePassword,
                     validator: (val) {
                       return validInput(val!, 5, 30, "password");
                     },
                     hintText: "13".tr,
                     lable: "19".tr,
-                    iconData: Icons.lock_clock_outlined, myController: controller.passwordController,
+                    iconData: controller.isHiddenPassword ? Icons.lock_outline_rounded : Icons.lock_open_outlined, myController: controller.passwordController,
                   ),
                   CustomButtonAuth(
                     text: '17'.tr,

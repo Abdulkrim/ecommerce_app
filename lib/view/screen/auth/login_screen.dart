@@ -55,15 +55,19 @@ class LogInScreen extends StatelessWidget {
                   iconData: Icons.email_outlined,
                   myController: controller.emailController,
                 ),
-                CustomTextFormFieldAuth(
-                  type: TextInputType.visiblePassword,
-                  validator: (val) {
-                    return validInput(val!, 5, 30, "password");
-                  },
-                  hintText: "13".tr,
-                  lable: "19".tr,
-                  iconData: Icons.lock_clock_outlined,
-                  myController: controller.passwordController,
+                GetBuilder<LoginControllerImp>(
+                  builder: (controller) => CustomTextFormFieldAuth(
+                    obscureText: controller.isHiddenPassword,
+                    onTapSuffixIcon: () => controller.showPassword(),
+                    type: TextInputType.visiblePassword,
+                    validator: (val) {
+                      return validInput(val!, 5, 30, "password");
+                    },
+                    hintText: "13".tr,
+                    lable: "19".tr,
+                    iconData: controller.isHiddenPassword ? Icons.lock_outline_rounded : Icons.lock_open_outlined,
+                    myController: controller.passwordController,
+                  ),
                 ),
                 InkWell(
                     onTap: controller.goToForgetPassword,
