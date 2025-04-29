@@ -17,7 +17,6 @@ class LoginControllerImp extends LoginController {
   @override
   goToSignUp() {
     Get.offNamed(AppRoute.signUp);
-    Get.delete<LoginControllerImp>();
   }
 
   @override
@@ -25,7 +24,6 @@ class LoginControllerImp extends LoginController {
     FormState? formData = formState.currentState;
     if (formData!.validate()) {
        print("Valid");
-       Get.delete<LoginControllerImp>();
     }else{
       print("Not Valid");
     }
