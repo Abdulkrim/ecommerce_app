@@ -6,17 +6,17 @@ import 'package:ecommerce_app/core/functions/check_internet.dart';
 import 'package:http/http.dart' as http;
 
 class Crud {
-  Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
+  Future<Either<StatusRequest, Map>> getData(
+    String linkUrl,
+  ) async {
     try {
       if (await checkInternet()) {
         var response = await http.get(
           Uri.parse(linkUrl),
           headers: {
             "Content-Type": "application/json",
-            "Authorization":
-                "Bearer 1|Ecm33uXyN90QQEwBHNPwdFNVrng5dSd0fh6Yo1OG6af65b84"
+            "Authorization": "Bearer 2|CBPzjKwbW5aBKs7JFxC5aGbrDryJOsrpT1OV4CST3c587df9"
           },
-          // body: data,
         );
         print(response.body.toString());
         if (response.statusCode == 200 || response.statusCode == 201) {
