@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/core/class/status_request.dart';
 import 'package:ecommerce_app/core/constant/app_route.dart';
+import 'package:ecommerce_app/core/functions/handling_data_controller.dart';
+import 'package:ecommerce_app/data/data_source/remote/signup_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +17,11 @@ class SignupControllerImp extends SignupController {
   late TextEditingController passwordController;
   GlobalKey <FormState> formState = GlobalKey();
   bool isHiddenPassword = true;
+  
+  StatusRequest statusRequest = StatusRequest.success;
+  SignupData signupData= SignupData(Get.find());
+
+  List data =[];
 
   @override
   goToSignIn() {
@@ -21,10 +29,21 @@ class SignupControllerImp extends SignupController {
   }
 
   @override
-  signUp() {
+  signUp() async {
     FormState? formData = formState.currentState;
-    if (formData!.validate()) {
-       Get.offNamed(AppRoute.verfiyCodeSignUp);
+    if (formData!.validate()){
+      statusRequest = StatusRequest.loading;
+    var response = await signupData.postData(username: usernameController.text,password: passwordController.text,email: emailController.text,phone: phoneController.text);
+    statusRequest = handlingData(response);
+    if (StatusRequest.success ==  statusRequest) {
+      if (response['status']) {
+        Get.offNamed(AppRoute.verfiyCodeSignUp);
+      }else{
+        Get.defaultDialog(title: "Warning",middleText: 'Phone Or Email Already Existing');
+        statusRequest= StatusRequest.failure;
+      }
+    }
+    update();
     }else{
       print("Not Valid");
     }

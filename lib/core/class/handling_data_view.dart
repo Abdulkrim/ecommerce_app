@@ -21,7 +21,7 @@ class HandlingDataView extends StatelessWidget {
                 child: Lottie.asset(AppImageAsset.offline,
                     width: 250, height: 250),
               )
-            : statusRequest == StatusRequest.serverFailure
+            : statusRequest == StatusRequest.serverFailure || statusRequest == StatusRequest.serverException
                 ? Center(
                     child: Lottie.asset(AppImageAsset.server,
                         width: 250, height: 250),
