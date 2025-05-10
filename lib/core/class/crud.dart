@@ -35,28 +35,38 @@ class Crud {
   }
 
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
+    var response;
     try {
       if (await checkInternet()) {
-        var response = await http.post(
+        print("datatoserver: $data");
+        response = await http.post(
           Uri.parse(linkUrl),
           headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer 2|CBPzjKwbW5aBKs7JFxC5aGbrDryJOsrpT1OV4CST3c587df9"
+            "Accept": "application/json",
+            "Authorization":
+                "Bearer 2|CBPzjKwbW5aBKs7JFxC5aGbrDryJOsrpT1OV4CST3c587df9"
           },
           body: data,
         );
-        print(response.body.toString());
+        print(response.statusCode.toString());
         if (response.statusCode == 200 || response.statusCode == 201) {
           Map responseBody = jsonDecode(response.body);
           return Right(responseBody);
         } else {
+          // final dataError = jsonDecode(response.body);
+          // final errorMessages = dataError['errors'];
+          // String combinedErrors = '';
+          // errorMessages.forEach((key, value) {
+          //   combinedErrors += '${value[0]}\n';
+          // });
+          // print("eeoro: " + combinedErrors);
           return Left(StatusRequest.serverFailure);
         }
       } else {
         return Left(StatusRequest.offlineFailure);
       }
     } catch (_) {
-      return Left(StatusRequest.serverException);
+      return Left(StatusRequest.failure);
     }
   }
 }

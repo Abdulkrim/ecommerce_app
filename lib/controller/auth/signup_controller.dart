@@ -15,13 +15,13 @@ class SignupControllerImp extends SignupController {
   late TextEditingController usernameController;
   late TextEditingController phoneController;
   late TextEditingController passwordController;
-  GlobalKey <FormState> formState = GlobalKey();
+  GlobalKey<FormState> formState = GlobalKey();
   bool isHiddenPassword = true;
-  
-  StatusRequest statusRequest = StatusRequest.success;
-  SignupData signupData= SignupData(Get.find());
 
-  List data =[];
+  StatusRequest statusRequest = StatusRequest.success;
+  SignupData signupData = SignupData(Get.find());
+
+  List data = [];
 
   @override
   goToSignIn() {
@@ -31,28 +31,34 @@ class SignupControllerImp extends SignupController {
   @override
   signUp() async {
     FormState? formData = formState.currentState;
-    if (formData!.validate()){
+    if (formData!.validate()) {
       statusRequest = StatusRequest.loading;
-    var response = await signupData.postData(username: usernameController.text,password: passwordController.text,email: emailController.text,phone: phoneController.text);
-    statusRequest = handlingData(response);
-    if (StatusRequest.success ==  statusRequest) {
-      if (response['status']) {
-        Get.offNamed(AppRoute.verfiyCodeSignUp);
-      }else{
-        Get.defaultDialog(title: "Warning",middleText: 'Phone Or Email Already Existing');
-        statusRequest= StatusRequest.failure;
+      update();
+      var response = await signupData.postData(
+          username: usernameController.text,
+          password: passwordController.text,
+          email: emailController.text,
+          phone: phoneController.text);
+      statusRequest = handlingData(response);
+      if (StatusRequest.success == statusRequest) {
+        if (response['status']) {
+          Get.offNamed(AppRoute.verfiyCodeSignUp,
+              arguments: {"email": emailController.text});
+        }
+      } else {
+        Get.defaultDialog(
+            title: "Warning", middleText: 'Phone Or Email Already Existing');
+        statusRequest = StatusRequest.failure;
       }
-    }
-    update();
-    }else{
+      update();
+    } else {
       print("Not Valid");
     }
-   
   }
 
-  showPassword(){
+  showPassword() {
     isHiddenPassword = isHiddenPassword == true ? false : true;
-    update();
+    update(); 
   }
 
   @override
