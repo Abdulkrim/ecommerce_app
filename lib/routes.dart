@@ -8,6 +8,7 @@ import 'package:ecommerce_app/view/screen/auth/forget_password/success_reset_pas
 import 'package:ecommerce_app/view/screen/auth/success_signup_screen.dart';
 import 'package:ecommerce_app/view/screen/auth/forget_password/verify_code_screen.dart';
 import 'package:ecommerce_app/view/screen/auth/verify_code_signup_screen.dart';
+import 'package:ecommerce_app/view/screen/home/home_screen.dart';
 import 'package:ecommerce_app/view/screen/language/language_screen.dart';
 import 'package:ecommerce_app/view/screen/on_boarding/onboarding_screen.dart';
 import 'package:ecommerce_app/view/test/test_view.dart';
@@ -15,9 +16,12 @@ import 'package:get/get.dart';
 
 
 List<GetPage<dynamic>>? routes = [
-  // auth
-  GetPage(name: AppRoute.language, page: () => LanguageScreen(), middlewares:[MyMiddleware(),]),
+  
   // GetPage(name: AppRoute.language, page: () => TestView(),),
+  GetPage(name: AppRoute.language, page: () => LanguageScreen(), middlewares:[MyMiddleware(),]),
+  // on Boarding
+  GetPage(name: AppRoute.onBoarding, page: () => OnBoardingScreen()),
+  // Auth
   GetPage(name: AppRoute.logIn, page: () => LogInScreen()),
   GetPage(name: AppRoute.signUp, page: () => SignUpScreen()),
   GetPage(name: AppRoute.forgetPassword, page: () => ForgetPasswordScreen()),
@@ -26,8 +30,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.resetPassword, page: () => ResetPasswordScreen()),
   GetPage(name: AppRoute.successRestPassword, page: () => SuccessResetPasswordScreen()),
   GetPage(name: AppRoute.successSignUp, page: () => SuccessSignupScreen()),
-  // on boarding
-  GetPage(name: AppRoute.onBoarding, page: () => OnBoardingScreen()),
+  // Home
+  GetPage(name: AppRoute.homescreen, page: () => HomeScreen()),
+  
 ];
 
 

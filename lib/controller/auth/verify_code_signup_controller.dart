@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/core/class/status_request.dart';
 import 'package:ecommerce_app/core/constant/app_route.dart';
 import 'package:ecommerce_app/core/functions/handling_data_controller.dart';
-import 'package:ecommerce_app/data/data_source/remote/verify_code_signup_data.dart';
+import 'package:ecommerce_app/data/data_source/remote/auth/verify_code_signup_data.dart';
 import 'package:get/get.dart';
 
 abstract class VerifyCodeSignUpController extends GetxController {
@@ -25,7 +25,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
         }
       } else {
         Get.defaultDialog(
-            title: "Warning", middleText: 'Phone Or Email Already Existing');
+            title: "Warning", middleText: 'Verify Code Not Correct');
         statusRequest = StatusRequest.failure;
       }
       update();

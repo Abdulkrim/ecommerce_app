@@ -44,7 +44,7 @@ class Crud {
           headers: {
             "Accept": "application/json",
             "Authorization":
-                "Bearer 2|CBPzjKwbW5aBKs7JFxC5aGbrDryJOsrpT1OV4CST3c587df9"
+                "Bearer 2|CBPzjKwbW5aBKs7 JFxC5aGbrDryJOsrpT1OV4CST3c587df9"
           },
           body: data,
         );
