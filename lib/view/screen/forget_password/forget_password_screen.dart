@@ -53,7 +53,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               CustomButtonAuth(
                 text: '30'.tr,
                 onPressed: () {
-                  controller.goVerfiyCode();
+                  controller.checkEmail();
                 },
               ),
               SizedBox(

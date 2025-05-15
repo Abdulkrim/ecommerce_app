@@ -6,19 +6,18 @@ import 'package:ecommerce_app/data/data_source/remote/auth/verify_code_data.dart
 import 'package:get/get.dart';
 
 abstract class VerifyCodeSignUpController extends GetxController {
-  checkCode();
   goSuccessSignUp(String verificationCode);
 }
 
 class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
-  VerifyCodeData verifyCodeSignUpData = VerifyCodeData(Get.find());
+  VerifyCodeData verifyCodeData = VerifyCodeData(Get.find());
   StatusRequest? statusRequest;
   String? email;
   @override
   goSuccessSignUp(verificationCode) async{
     statusRequest = StatusRequest.loading;
       update();
-      var response = await verifyCodeSignUpData.postData(verifyCode:verificationCode ,email: email!);
+      var response = await verifyCodeData.postData(verifyCode:verificationCode ,email: email!);
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status']) {
@@ -32,9 +31,6 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
       update();
     
   }
-
-  @override
-  checkCode() {}
 
   @override
   void onInit() {
