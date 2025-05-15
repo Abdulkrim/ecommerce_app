@@ -1,5 +1,5 @@
   
-import 'package:ecommerce_app/controller/auth/verfiy_code_controller.dart';
+import 'package:ecommerce_app/controller/forget_password/verfiy_code_forget_password_controller.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';

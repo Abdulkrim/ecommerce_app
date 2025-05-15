@@ -1,13 +1,13 @@
 import 'package:ecommerce_app/core/class/crud.dart';
 import 'package:ecommerce_app/link_api.dart';
 
-class VerifyCodeSignUpData {
+class VerifyCodeData {
   Crud crud;
 
-  VerifyCodeSignUpData(this.crud);
+  VerifyCodeData(this.crud);
 
   postData({required String email, required String verifyCode}) async {
-    var response = await crud.postData(AppLink.verifyCodeSignUp, {
+    var response = await crud.postData(AppLink.verifyCode, {
       "email": email,
       "verifycode": verifyCode,
     });

@@ -35,7 +35,7 @@ class Crud {
   }
 
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
-    var response;
+    http.Response response;
     try {
       if (await checkInternet()) {
         print("datatoserver: $data");

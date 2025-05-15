@@ -5,7 +5,11 @@ class AppLink {
 
   //=============== Auth ===============
   static const signup = "$server/auth/register";
-  static const verifyCodeSignUp = "$server/auth/verify-code";
+  static const verifyCode = "$server/auth/verify-code";
   static const login = "$server/auth/login";
+
+  //=============== Forget Password ===============
+  static const checkEmail = "$server/forget-password/check-email";
+  static const resetPassword = "$server/forget-password/reset-password";
   
 }
