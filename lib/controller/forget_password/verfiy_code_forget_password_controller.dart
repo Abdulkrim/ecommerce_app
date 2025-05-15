@@ -20,7 +20,7 @@ StatusRequest? statusRequest;
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status']) {
-           Get.offAllNamed(AppRoute.resetPassword);
+           Get.offAllNamed(AppRoute.resetPassword,arguments: {"email": email});
         }
       } else {
         Get.defaultDialog(

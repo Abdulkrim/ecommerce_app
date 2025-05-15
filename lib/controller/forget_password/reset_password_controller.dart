@@ -19,7 +19,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   @override
   goSuccessRestPassword() async {
-    if (passwordController.text == rePasswordController.text) {
+    if (passwordController.text != rePasswordController.text) {
       return Get.defaultDialog(
         title: "Warning", middleText: "Password Not Matched"
       );
