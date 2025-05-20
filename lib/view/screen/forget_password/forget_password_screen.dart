@@ -28,7 +28,7 @@ class ForgetPasswordScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: GetBuilder<ForgetPasswordControllerImp>(
-          builder: (controller) => HandlingDataView(
+          builder: (controller) => HandlingDataRequest(
             statusRequest: controller.statusRequest,
             widget: Form(
               key: controller.formState,

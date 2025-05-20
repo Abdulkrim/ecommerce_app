@@ -11,7 +11,7 @@ abstract class VerfiyCodeForgetPasswordController extends GetxController {
 class VerifyCodeControllerImp extends VerfiyCodeForgetPasswordController {
   String? email;
 VerifyCodeData verifyCodeData = VerifyCodeData(Get.find());
-StatusRequest? statusRequest;
+StatusRequest? statusRequest = StatusRequest.none;
   @override
   goRestPassword(verificationCode) async {
      statusRequest = StatusRequest.loading;

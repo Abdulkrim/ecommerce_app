@@ -29,7 +29,7 @@ class LogInScreen extends StatelessWidget {
         ),
       ),
       body: GetBuilder<LoginControllerImp>(
-        builder: (controller) => HandlingDataView(
+        builder: (controller) => HandlingDataRequest(
           statusRequest: controller.statusRequest,
           widget: PopScope(
             canPop: false,

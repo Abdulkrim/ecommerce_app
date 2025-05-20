@@ -18,7 +18,7 @@ class SignupControllerImp extends SignupController {
   GlobalKey<FormState> formState = GlobalKey();
   bool isHiddenPassword = true;
 
-  StatusRequest? statusRequest;
+  StatusRequest? statusRequest = StatusRequest.none;
   SignupData signupData = SignupData(Get.find());
 
   List data = [];

@@ -29,7 +29,7 @@ class SignUpScreen extends StatelessWidget {
       ),
       body: GetBuilder<SignupControllerImp>(
         builder: (controller) { 
-          return HandlingDataView(
+          return HandlingDataRequest(
             statusRequest: controller.statusRequest,
             widget: PopScope(
             onPopInvokedWithResult: alertExitApp,

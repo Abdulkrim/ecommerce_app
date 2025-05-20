@@ -12,7 +12,7 @@ abstract class ResetPasswordController extends GetxController {
 class ResetPasswordControllerImp extends ResetPasswordController {
   late TextEditingController passwordController;
   late TextEditingController rePasswordController;
- StatusRequest? statusRequest;
+ StatusRequest? statusRequest = StatusRequest.none;
  RestPasswordData restPasswordData =RestPasswordData(Get.find());
  String? email;
   GlobalKey<FormState> formState = GlobalKey();

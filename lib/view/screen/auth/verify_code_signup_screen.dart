@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/controller/auth/verify_code_signup_controller.dart';
+import 'package:ecommerce_app/core/class/handling_data_view.dart';
 import 'package:ecommerce_app/core/constant/app_color.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_body.dart';
 import 'package:ecommerce_app/view/wiget/auth/custom_text_title_auth.dart';
@@ -25,36 +26,39 @@ class VerifyCodeSignUpScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         child: GetBuilder<VerifyCodeSignUpControllerImp>(
-          builder: (controller) => ListView(
-            children: [
-              CustomTextTitleAuth(text: "41".tr),
-              SizedBox(
-                height: 10,
-              ),
-              CustomTextBody(text: "42".tr),
-              SizedBox(
-                height: 10,
-              ),
-              OtpTextField(
-                fieldWidth: 50,
-                borderRadius: BorderRadius.circular(20),
-                numberOfFields: 5,
-                borderColor: Color(0xFF512DA8),
-                //set to true to show as box or false to show as dash
-                showFieldAsBox: true,
-                //runs when a code is typed in
-                onCodeChanged: (String code) {
-                  //handle validation or checks here
-                },
-                //runs when every textfield is filled
-                onSubmit: (String verificationCode) {
-                  controller.goSuccessSignUp(verificationCode);
-                }, // end onSubmit
-              ),
-              SizedBox(
-                height: 30,
-              ),
-            ],
+          builder: (controller) => HandlingDataRequest(
+            statusRequest: controller.statusRequest,
+            widget: ListView(
+              children: [
+                CustomTextTitleAuth(text: "41".tr),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomTextBody(text: "42".tr),
+                SizedBox(
+                  height: 10,
+                ),
+                OtpTextField(
+                  fieldWidth: 50,
+                  borderRadius: BorderRadius.circular(20),
+                  numberOfFields: 5,
+                  borderColor: Color(0xFF512DA8),
+                  //set to true to show as box or false to show as dash
+                  showFieldAsBox: true,
+                  //runs when a code is typed in
+                  onCodeChanged: (String code) {
+                    //handle validation or checks here
+                  },
+                  //runs when every textfield is filled
+                  onSubmit: (String verificationCode) {
+                    controller.goSuccessSignUp(verificationCode);
+                  }, // end onSubmit
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
           ),
         ),
       ),

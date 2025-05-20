@@ -17,7 +17,7 @@ class LoginControllerImp extends LoginController {
   late TextEditingController passwordController;
   GlobalKey<FormState> formState = GlobalKey();
   bool isHiddenPassword = true;
-  StatusRequest? statusRequest;
+  StatusRequest? statusRequest = StatusRequest.none;
   LoginData loginData = LoginData(Get.find());
 
   @override
