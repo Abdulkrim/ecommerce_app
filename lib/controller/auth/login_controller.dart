@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:ecommerce_app/core/class/status_request.dart';
 import 'package:ecommerce_app/core/constant/app_route.dart';
 import 'package:ecommerce_app/core/functions/handling_data_controller.dart';
+import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/data/data_source/remote/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +20,7 @@ class LoginControllerImp extends LoginController {
   bool isHiddenPassword = true;
   StatusRequest? statusRequest = StatusRequest.none;
   LoginData loginData = LoginData(Get.find());
+  MyServices myServices = Get.find();
 
   @override
   goToSignUp() {
@@ -38,6 +40,11 @@ class LoginControllerImp extends LoginController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status']) {
+          myServices.sharedPreferences.setInt("id", response['data']['id']);
+          myServices.sharedPreferences.setString("username", response['data']['username']);
+          myServices.sharedPreferences.setString("email", response['data']['email']);
+          myServices.sharedPreferences.setString("phone", response['data']['phone']);
+          myServices.sharedPreferences.setString("step", "2");
           Get.offNamed(AppRoute.homescreen,);
         }
       } else {
